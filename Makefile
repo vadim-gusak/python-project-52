@@ -2,7 +2,7 @@ lint:
 	poetry run flake8 task_manager
 
 test-start:
-	poetry run task_manager/manage.py runserver
+	poetry run python manage.py runserver
 
 PORT ?= 8000
 start:
