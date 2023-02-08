@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from django.utils.translation import gettext as _
 
 
 def hello_view(request):
-    return render(request, 'hello.html')
+    text = _('Hello, worlddd!')
+    return render(request, 'base.html', {'text': text})
