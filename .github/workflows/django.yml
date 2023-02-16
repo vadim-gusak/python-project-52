@@ -32,5 +32,7 @@ jobs:
         DEBUG: 1
         DATABASE_URL: sqlite:///./db.sqlite3
         CSRF_TRUSTED_ORIGINS: http://127.0.0.1:8000
+        SECRET_KEY: 'secret'
+        ALLOWED_HOSTS: 127.0.0.1
       run: |
         python manage.py test
