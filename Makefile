@@ -16,3 +16,6 @@ off-db:
 
 tests:
 	poetry run python manage.py test --verbosity 2
+
+test-cov:
+	poetry run coverage run --source='.' manage.py test task_manager && poetry run coverage xml
