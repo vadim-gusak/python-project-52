@@ -28,5 +28,7 @@ jobs:
         poetry config virtualenvs.create false
         poetry install
     - name: Run Tests
+      env:
+        DEBUG: 1
       run: |
         python manage.py test
