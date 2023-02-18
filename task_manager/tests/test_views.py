@@ -9,19 +9,19 @@ class TestUsersView(TestCase):
     def setUp(self) -> None:
         self.users = [
             User.objects.create(
-                first_name='Bob', 
-                last_name='WoW', 
-                username='wiku', 
+                first_name='Bob',
+                last_name='WoW',
+                username='wiku',
                 is_staff=True
                 ),
             User.objects.create(
-                first_name='Rob', 
-                last_name='Glo', 
+                first_name='Rob',
+                last_name='Glo',
                 username='gl'
                 ),
             User.objects.create(
-                first_name='Uki', 
-                last_name='G', 
+                first_name='Uki',
+                last_name='G',
                 username='lovz'
                 )
         ]
@@ -56,8 +56,8 @@ class TestRegistrationView(TestCase):
 
     def test_view_post_is_successful(self):
         user_data = {
-            'first_name': 'Bob', 
-            'last_name': 'WoW', 
+            'first_name': 'Bob',
+            'last_name': 'WoW',
             'username': 'wiku',
             'password1': 'Pukote74.',
             'password2': 'Pukote74.'
@@ -93,16 +93,16 @@ class TestUpdateUserView(TestCase):
 
     def setUp(self) -> None:
         user1 = User.objects.create(
-            first_name='Bob', 
-            last_name='WoW', 
-            username='wiku', 
+            first_name='Bob',
+            last_name='WoW',
+            username='wiku',
         )
         user1.set_password('Pukote74.')
         user1.save()
 
         user2 = User.objects.create(
-            first_name='Rob', 
-            last_name='Glo', 
+            first_name='Rob',
+            last_name='Glo',
             username='gl'
             )
         user2.set_password('Pukote77.')
@@ -117,7 +117,6 @@ class TestUpdateUserView(TestCase):
         }
 
         return super().setUp()
-    
 
     def test_view_get_is_200_authenticated(self):
         self.client.login(
@@ -185,20 +184,21 @@ class TestUpdateUserView(TestCase):
         message = list(resp.context.get('messages'))[0]
         self.assertEqual(message.tags, "error")
 
+
 class TestDeleteUserView(TestCase):
 
     def setUp(self) -> None:
         user1 = User.objects.create(
-            first_name='Bob', 
-            last_name='WoW', 
-            username='wiku', 
+            first_name='Bob',
+            last_name='WoW',
+            username='wiku',
         )
         user1.set_password('Pukote74.')
         user1.save()
 
         user2 = User.objects.create(
-            first_name='Rob', 
-            last_name='Glo', 
+            first_name='Rob',
+            last_name='Glo',
             username='gl'
             )
         user2.set_password('Pukote77.')
