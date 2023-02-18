@@ -105,6 +105,9 @@ class UpdateUserView(View):
         user = get_object_or_404(User, id=pk)
         username = user.username
         if request.user.is_authenticated:
+            if request.user.id != user.id:
+                messages.add_message(request, messages.ERROR, USER_UPDATE_ERROR)
+                return redirect('users')
             form = UserCreateForm(request.POST, instance=user)
             if form.is_valid():
                 form.save()
@@ -132,6 +135,9 @@ class DeleteUserView(View):
         pk = kwargs.get('pk')
         user = get_object_or_404(User, id=pk)
         if request.user.is_authenticated:
+            if request.user.id != user.id:
+                messages.add_message(request, messages.ERROR, USER_UPDATE_ERROR)
+                return redirect('users')
             user.delete()
             messages.add_message(request, messages.SUCCESS, USER_DELETE_SUCCESS)
             return redirect('users')
