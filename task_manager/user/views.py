@@ -3,13 +3,14 @@ from django.views import View
 from .forms import UserCreateForm
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.utils.translation import gettext as _
 
 
-REGISTRATION_SUCCESS = "Пользователь успешно зарегистрирован"
-AUTHENTICATION_ERROR = "Вы не авторизованы! Пожалуйста, выполните вход."
-USER_UPDATE_SUCCESS = "Пользователь успешно изменён"
-USER_DELETE_SUCCESS = "Пользователь успешно удалён"
-USER_UPDATE_ERROR = "У вас нет прав для изменения другого пользователя."
+REGISTRATION_SUCCESS = _("User successfully registered")
+AUTHENTICATION_ERROR = _("You are not authorized! Please sign in.")
+USER_UPDATE_SUCCESS = _("User updated successfully")
+USER_DELETE_SUCCESS = _("User deleted successfully")
+USER_UPDATE_ERROR = _("You do not have rights to change another user.")
 
 
 class UsersView(View):

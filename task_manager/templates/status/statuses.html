@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Users | Task manager{% endblock %}
+{% load i18n %}
+{% block title %}{% trans 'Statuses | Task manager' %}{% endblock %}
 {% block content %}
 <div class="container wrapper flex-grow-1">
-    <h1 class="mt-2">Statuses</h1>
-    <a class="nav-link" href="{% url 'create_status' %}">Create status</a>
+    <h1 class="mt-2">{% trans 'Statuses' %}</h1>
+    <a class="nav-link" href="{% url 'create_status' %}">{% trans 'Create status' %}</a>
     <table class="table table-hover">
         <thead>
             <tr>
@@ -11,10 +12,10 @@
                     ID
                 </th>
                 <th>
-                    Name
+                    {% trans 'Name' %}
                 </th>
                 <th>
-                    Created at
+                    {% trans 'Created at' %}
                 </th>
                 <th></th>
             </tr>
@@ -32,9 +33,9 @@
                     {{ status.created_at }}
                 </td>
                 <td>
-                    <a href="{% url 'update_status' pk=status.id %}">Edit</a>
+                    <a href="{% url 'update_status' pk=status.id %}">{% trans 'Edit' %}</a>
                     <br>
-                    <a href="{% url 'delete_status' pk=status.id %}">Delete</a>
+                    <a href="{% url 'delete_status' pk=status.id %}">{% trans 'Delete' %}</a>
                 </td>
             </tr>
             {% endfor %}

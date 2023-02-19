@@ -1,6 +1,25 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
 <div class="container wrapper flex-grow-1">
-    <h1 class="mt-2">Main</h1>
+    <h1 class="mt-2"></h1>
+    <h1 class="mt-2"></h1>
+    <div class="card">
+        <div class="card-body p-5 bg-light">
+            <div class="display-4">
+                {% trans 'Task manager' %}
+            </div>
+            <p class="lead">
+                {% trans 'A small application for creating and tracking tasks. Written in Python using Django. Still in development =)' %}
+            </p>
+            <p>
+                {% trans 'By clicking on the button below, you can see the code.' %}
+            </p>
+            <hr>
+            <a class="btn btn-primary btn-lg" href="https://github.com/vadim-gusak/python-project-52">
+                {% trans 'See code' %}
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock %}

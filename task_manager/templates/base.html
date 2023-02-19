@@ -30,7 +30,7 @@
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'statuses' %}">Statuses</a>
+          <a class="nav-link" href="{% url 'statuses' %}">{% trans 'Statuses' %}</a>
         </li>
         {% endif %}
       </ul>
@@ -45,7 +45,7 @@
         {% else %}
         <form action="{% url 'logout' %}" method="post">
           {% csrf_token %}
-          <input class="btn nav-link" type="submit" value="Выход">
+          <input class="btn nav-link" type="submit" value="{% trans 'Log out' %}">
         </form>
         {% endif %}
       </ul>
@@ -59,6 +59,11 @@
     {% block content %}{% endblock %}
 
   </main>
+  <footer class="mt-auto">
+    <div class="container my-5 pt-4 border-top">
+      <a href="https://github.com/vadim-gusak">{% trans 'My GitHub' %}</a>
+    </div>
+  </footer>
 </body>
 
 </html>

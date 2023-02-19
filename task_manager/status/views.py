@@ -3,12 +3,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .models import Status
 from .forms import StatusForm
+from django.utils.translation import gettext as _
 
 
-AUTHENTICATION_ERROR = "Вы не авторизованы! Пожалуйста, выполните вход."
-STATUS_CREATE_SUCCESS = "Статус успешно создан"
-STATUS_UPDATE_SUCCESS = "Статус успешно изменён"
-STATUS_DELETE_SUCCESS = "Статус успешно удалён"
+AUTHENTICATION_ERROR = _("You are not authorized! Please sign in.")
+STATUS_CREATE_SUCCESS = _("Status created successfully")
+STATUS_UPDATE_SUCCESS = _("Status updated successfully")
+STATUS_DELETE_SUCCESS = _("Status deleted successfully")
 
 
 class StatusesView(View):

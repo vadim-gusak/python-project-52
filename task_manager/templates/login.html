@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load bootstrap4 %}
-{% block title %}Sign In | Task manager{% endblock %}
+{% block title %}{% trans 'Sign In' %} | {% trans 'Task manager' %}{% endblock %}
 {% block content %}
-    <h1 class="m-2">Sign In</h1>
+    <h1 class="mt-2">{% trans 'Sign In' %}</h1>
     <form action="." method="post">
         {% csrf_token %}
         {% bootstrap_form form %}

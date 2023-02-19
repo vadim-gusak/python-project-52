@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-08 12:40+1000\n"
+"POT-Creation-Date: 2023-02-19 13:28+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,22 +20,133 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/templates/base.html:14 task_manager/templates/base.html:20
+#: status/views.py:9 user/views.py:10
+msgid "You are not authorized! Please sign in."
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: status/views.py:10
+msgid "Status created successfully"
+msgstr "Статус успешно создан"
+
+#: status/views.py:11
+msgid "Status updated successfully"
+msgstr "Статус успешно изменён"
+
+#: status/views.py:12
+msgid "Status deleted successfully"
+msgstr "Статус успешно удалён"
+
+#: templates/base.html:14 templates/base.html:20 templates/login.html:4
+#: templates/main.html:10
 msgid "Task manager"
 msgstr "Менеджер задач"
 
-#: task_manager/templates/base.html:28
+#: templates/base.html:29 templates/user/users.html:6
 msgid "Users"
 msgstr "Пользователи"
 
-#: task_manager/templates/base.html:33
+#: templates/base.html:33 templates/status/statuses.html:6
+msgid "Statuses"
+msgstr "Статусы"
+
+#: templates/base.html:40 templates/login.html:4 templates/login.html:6
 msgid "Sign In"
 msgstr "Вход"
 
-#: task_manager/templates/base.html:36
+#: templates/base.html:43
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#: task_manager/views.py:6
-msgid "Hello, worlddd!"
-msgstr "Привет, миррр!"
+#: templates/base.html:48
+msgid "Log out"
+msgstr "Выход"
+
+#: templates/base.html:64
+msgid "My GitHub"
+msgstr "Мой GitHub"
+
+#: templates/main.html:13
+msgid ""
+"A small application for creating and tracking tasks. Written in Python using "
+"Django. Still in development =)"
+msgstr ""
+"Небольшое приложение для создания и отслеживания задач. Написано на Python с "
+"использованием Django. Ещё в разработке =)"
+
+#: templates/main.html:16
+msgid "By clicking on the button below, you can see the code."
+msgstr "Нажав на кнопку ниже, можно посмотреть код."
+
+#: templates/main.html:20
+msgid "See code"
+msgstr "Посмотреть код"
+
+#: templates/status/statuses.html:3
+#, fuzzy
+#| msgid "Task manager"
+msgid "Statuses | Task manager"
+msgstr "Менеджер задач"
+
+#: templates/status/statuses.html:7
+msgid "Create status"
+msgstr "Создать статус"
+
+#: templates/status/statuses.html:15
+msgid "Name"
+msgstr "Имя"
+
+#: templates/status/statuses.html:18 templates/user/users.html:20
+msgid "Created at"
+msgstr "Дата создания"
+
+#: templates/status/statuses.html:36 templates/user/users.html:45
+msgid "Edit"
+msgstr "Изменить"
+
+#: templates/status/statuses.html:38 templates/user/users.html:47
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/user/users.html:3
+#, fuzzy
+#| msgid "Task manager"
+msgid "Users | Task manager"
+msgstr "Менеджер задач"
+
+#: templates/user/users.html:14
+msgid "User name"
+msgstr "Имя пользователя"
+
+#: templates/user/users.html:17
+msgid "Full name"
+msgstr "Полное имя"
+
+#: user/views.py:9
+msgid "User successfully registered"
+msgstr "Пользователь успешно зарегистрирован"
+
+#: user/views.py:11
+msgid "User updated successfully"
+msgstr "Пользователь успешно изменён"
+
+#: user/views.py:12
+msgid "User deleted successfully"
+msgstr "Пользователь успешно удалён"
+
+#: user/views.py:13
+msgid "You do not have rights to change another user."
+msgstr "У вас нет прав для изменения другого пользователя."
+
+#: views.py:9
+msgid "You are logged in"
+msgstr "Вы залогинены"
+
+#: views.py:10
+msgid "You are logged out"
+msgstr "Вы разлогинены"
+
+#: views.py:12
+msgid ""
+"Please enter the correct username and password. Both fields can be case "
+"sensitive."
+msgstr "Пожалуйста, введите правильные имя пользователя и пароль. Оба поля могут быть чувствительны к регистру."
