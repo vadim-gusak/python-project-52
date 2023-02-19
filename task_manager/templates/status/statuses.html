@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Users | Task manager{% endblock %}
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <h1 class="mt-2">Statuses</h1>
+    <a class="nav-link" href="{% url 'create_status' %}">Create status</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Created at
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for status in statuses %}
+            <tr>
+                <td>
+                    {{ status.id }}
+                </td>
+                <td>
+                    {{ status.name }}
+                </td>
+                <td>
+                    {{ status.created_at }}
+                </td>
+                <td>
+                    <a href="{% url 'update_status' pk=status.id %}">Edit</a>
+                    <br>
+                    <a href="{% url 'delete_status' pk=status.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

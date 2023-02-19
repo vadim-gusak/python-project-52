@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block title %}Sign Up | Task manager{% endblock %}
+{% block content %}
+<h1 class="mt-2">Create status</h1>
+<form action="." method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button "Create" button_type="submit" button_class="btn-primary" %}
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Delete status | Task manager{% endblock %}
+{% load bootstrap4 %}
+{% block content %}
+<h1 class="mt-2">Delete status</h1>
+<p>Вы уверены, что хотите удалить {{ status.name }}?</p>
+<form action="{% url 'delete_status' pk=status.id %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_button "Yes, delete" button_type="submit" button_class="btn-danger" %}
+</form>
+{% endblock %}

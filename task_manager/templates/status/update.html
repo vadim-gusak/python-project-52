@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Update status {{ status.name }} | Task manager{% endblock %}
+{% load bootstrap4 %}
+{% block content %}
+<h1 class="mt-2">Update status {{ status.name }}</h1>
+<form action="{% url 'update_status' pk=status.id %}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% bootstrap_button "Update" button_type="submit" button_class="btn-primary" %}
+</form>
+{% endblock %}
